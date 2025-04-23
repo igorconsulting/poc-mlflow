@@ -56,13 +56,28 @@ POC-MLFLOW/
 
 ## How to Run
 
-Install dependencies:
+This project is managed using [`uv`](https://github.com/astral-sh/uv), a fast Python package manager compatible with `pyproject.toml`.
+
+### 1. Install `uv` (if not already installed)
 
 ```bash
-pip install -r requirements.txt
+pip install uv
 ```
 
-Run the pipeline:
+### 2. Install project dependencies
+
+```bash
+uv pip install -r pyproject.toml
+```
+
+Alternatively, if you're using `uv` as the main toolchain:
+
+```bash
+uv venv
+uv pip install -e .
+```
+
+### 3. Run the pipeline
 
 ```bash
 python main.py

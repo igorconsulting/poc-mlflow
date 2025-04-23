@@ -9,24 +9,40 @@ The goal is to provide a reproducible, maintainable, and extensible pipeline for
 ## Project Structure
 
 ```
-mlflow_xgboost_iris/
+POC-MLFLOW/
+├── bad-code/
+│   ├── no-mlflow.py              # Baseline script without MLflow logging
+│   └── with-mlflow.py            # Equivalent script using MLflow tracking
+│
 ├── config/
-│   └── hyperparams.py              # Model hyperparameters
+│   └── hyperparams.py            # Centralized model hyperparameters
 │
 ├── core/
-│   ├── data_loader.py              # Loads and splits the dataset
-│   ├── trainer.py                  # Trains the model
-│   ├── evaluator.py                # Evaluates performance
-│   └── visualizer.py               # Generates visual artifacts
+│   ├── data_loader.py            # Loads and splits the dataset
+│   ├── evaluator.py              # Computes evaluation metrics
+│   └── trainer.py                # Trains the XGBoost model
+│
+├── logger/
+│   └── mlflow_logger.py          # Encapsulates MLflow logging logic
 │
 ├── pipeline/
-│   └── run_experiment.py          # Pipeline orchestration (pure function)
+│   └── run_experiment.py         # Orchestrates the pure pipeline
 │
-├── utils/
-│   └── mlflow_logger.py           # Handles MLflow logging and artifacts
+├── model/
+│   └── iris_xgboost.json         # Optional: serialized model artifact
 │
-├── main.py                        # Pipeline entry point
-└── README.md
+├── plots/                        # Temporary directory for confusion matrix plot
+│
+├── view/
+│   └── confusion_matrix.py       # Generates confusion matrix figure
+│
+├── mlruns/                       # MLflow tracking directory (auto-generated)
+├── main.py                       # Pipeline entry point
+├── pyproject.toml                # Project dependencies and metadata
+├── .gitignore                    # Files and folders to be excluded from version control
+├── .python-version               # Python version specification
+└── README.md                     # Project documentation
+
 ```
 
 ## Features

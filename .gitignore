@@ -1,0 +1,6 @@
+model/
+mlruns/
+.venv/
+uv.lock
+__pycache__
+plots/

@@ -1,0 +1,13 @@
+[project]
+name = "poc-mlflow"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "black>=25.1.0",
+    "isort>=6.0.1",
+    "mlflow>=2.21.3",
+    "seaborn>=0.13.2",
+    "xgboost>=3.0.0",
+]

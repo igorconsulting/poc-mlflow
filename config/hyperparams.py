@@ -1,4 +1,4 @@
-PARAMS = {
+HYPERPARAMS = {
     "objective": "multi:softprob",
     "num_class": 3,
     "learning_rate": 0.3,

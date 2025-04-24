@@ -1,4 +1,4 @@
-from config.hyperparams import PARAMS
+from config.hyperparams import HYPERPARAMS
 from core.data_loader import load_data, prepare_data
 from logger.mlflow_logger import persist_results
 from pipeline.run_experiment import run_pipeline
@@ -15,7 +15,7 @@ def main():
         y_train=y_train,
         y_test=y_test,
         target_names=target_names,
-        params=PARAMS,
+        params=HYPERPARAMS,
     )
 
     # persist results
@@ -30,6 +30,7 @@ def main():
     print("Persist status:", persist_status["status"])
     print("Message:", persist_status["message"])
     print("Run ID", persist_status["run_id"])
+    print("Done!")
 
 
 if __name__ == "__main__":
